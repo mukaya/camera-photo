@@ -1,13 +1,11 @@
 const PostPhoto = require('../models/postPhotoModel');
-
 class PostPhotoController {
     static postPhoto(){
         return async (request, response, next)=>{
-            
+            console.log(request.file);
             const {filename} = request.file;
-            const goodFileName = `${filename}.png`;
-            if(!goodFileName)return response.status(422).json({error:'file required'});
-            const filePost = new PostPhoto({photo:goodFileName});
+            if(!filename)return response.status(422).json({error:'file required'});           
+            const filePost = new PostPhoto({photo:filename});
 
             await filePost.save()
             .then(result=>response.json(result))
@@ -16,7 +14,7 @@ class PostPhotoController {
     }
     static displayPhoto(){
         return async (request, response, next)=>{
-            await this.postPhoto.find()
+            await PostPhoto.find()
             .then(result=>response.json(result))
             .catch(error=>console.log(error));
         }

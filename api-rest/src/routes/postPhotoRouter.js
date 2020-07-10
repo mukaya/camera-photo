@@ -5,7 +5,7 @@ const multer = require("multer");
 const upoadConfig = require("../middlewere/upload");
 const upload = multer(upoadConfig);
 
-Router.post('/api/photos',upload.single('file'),PostPhotoController.postPhoto());
+Router.post('/api/photos',upload.single('filename'),PostPhotoController.postPhoto());
 Router.get('/api/photos', PostPhotoController.displayPhoto());
 
 module.exports = Router;

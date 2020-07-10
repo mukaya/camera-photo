@@ -5,9 +5,9 @@ import { CameraFeed } from './components/camera-feed';
 
 const uploadImage = async file => {
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append('filename', file);
 
-    axios.post("http://localhost:5000/api/photos",formData)
+    await axios.post("http://localhost:5000/api/photos",formData)
     .then(res => {
       console.log(res.data);
     })
@@ -18,7 +18,7 @@ const uploadImage = async file => {
 function App() {
     return (
         <div className="App">
-            <h1>Image capture test</h1>
+            <h1>Image capture</h1>
             <CameraFeed sendFile={uploadImage} />
         </div>
     );

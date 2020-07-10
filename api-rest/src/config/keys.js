@@ -1,3 +1,3 @@
 module.exports = {
-    MONGOURI:`mongodb://127.0.0.1:27017/tes`
+    MONGOURI:`mongodb+srv://mern:06red9NHYEpHgisS@cluster0-9vkod.mongodb.net/<dbname>?retryWrites=true&w=majority`
 }
