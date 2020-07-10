@@ -1,0 +1,17 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodemon src/server.js",
+  "scripts": {
+    "start":"nodemon src/server.js"
+  },
+  "author": "Osée Mukaya",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.22",
+    "multer": "^1.4.2"
+  }
+}
